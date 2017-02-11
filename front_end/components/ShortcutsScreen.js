@@ -38,6 +38,7 @@ Components.ShortcutsScreen = class {
   }
 
   static registerShortcuts() {
+    /*
     // Elements panel
     var elementsSection = Components.shortcutsScreen.section(Common.UIString('Elements Panel'));
 
@@ -81,6 +82,7 @@ Components.ShortcutsScreen = class {
         Components.ShortcutsScreen.ElementsPanelShortcuts.IncrementBy01, Common.UIString('Increment by %f', 0.1));
     stylesPaneSection.addAlternateKeys(
         Components.ShortcutsScreen.ElementsPanelShortcuts.DecrementBy01, Common.UIString('Decrement by %f', 0.1));
+    */
 
     // Debugger
     var section = Components.shortcutsScreen.section(Common.UIString('Debugger'));
@@ -98,12 +100,14 @@ Components.ShortcutsScreen = class {
         Components.ShortcutsScreen.SourcesPanelShortcuts.PrevCallFrame);
     section.addRelatedKeys(nextAndPrevFrameKeys, Common.UIString('Next/previous call frame'));
 
+    /*
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.EvaluateSelectionInConsole,
         Common.UIString('Evaluate selection in console'));
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.AddSelectionToWatch,
         Common.UIString('Add selection to watch'));
+    */
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.ToggleBreakpoint, Common.UIString('Toggle breakpoint'));
     section.addAlternateKeys(
@@ -112,10 +116,12 @@ Components.ShortcutsScreen = class {
 
     // Editing
     section = Components.shortcutsScreen.section(Common.UIString('Text Editor'));
+    /*
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.GoToMember, Common.UIString('Go to member'));
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.ToggleAutocompletion, Common.UIString('Autocompletion'));
+    */
     section.addAlternateKeys(Components.ShortcutsScreen.SourcesPanelShortcuts.GoToLine, Common.UIString('Go to line'));
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.JumpToPreviousLocation,
@@ -123,6 +129,7 @@ Components.ShortcutsScreen = class {
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.JumpToNextLocation,
         Common.UIString('Jump to next editing location'));
+    /*
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.ToggleComment, Common.UIString('Toggle comment'));
     section.addAlternateKeys(
@@ -140,6 +147,7 @@ Components.ShortcutsScreen = class {
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.SelectNextOccurrence,
         Common.UIString('Select next occurrence'));
+    */
     section.addAlternateKeys(Components.ShortcutsScreen.SourcesPanelShortcuts.SoftUndo, Common.UIString('Soft undo'));
     section.addAlternateKeys(
         Components.ShortcutsScreen.SourcesPanelShortcuts.GotoMatchingBracket,
@@ -150,6 +158,7 @@ Components.ShortcutsScreen = class {
         UI.shortcutRegistry.shortcutDescriptorsForAction('sources.switch-file'),
         Common.UIString('Switch between files with the same name and different extensions.'));
 
+    /*
     // Timeline panel
     section = Components.shortcutsScreen.section(Common.UIString('Timeline Panel'));
     section.addAlternateKeys(
@@ -193,6 +202,7 @@ Components.ShortcutsScreen = class {
         Components.ShortcutsScreen.LayersPanelShortcuts.Left.concat(
             Components.ShortcutsScreen.LayersPanelShortcuts.Right),
         Common.UIString('Pan or rotate left/right'));
+    */
   }
 
   /**

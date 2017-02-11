@@ -252,6 +252,7 @@
             "title": "Content scripts",
             "order": 4,
             "persistence": "permanent",
+            "condition": "false",
             "className": "Sources.ContentScriptsNavigatorView"
         },
         {
@@ -261,6 +262,7 @@
             "title": "Snippets",
             "order": 5,
             "persistence": "permanent",
+            "condition": "false",
             "className": "Sources.SnippetsNavigatorView"
         },
         {
@@ -409,6 +411,7 @@
             "title": "Search",
             "persistence": "closeable",
             "order": 100,
+            "condition": "false",
             "className": "Sources.AdvancedSearchView"
         },
         {
@@ -417,6 +420,7 @@
             "id": "sources.history",
             "title": "History",
             "persistence": "transient",
+            "condition": "false",
             "className": "Sources.RevisionHistoryView"
         },
         {
@@ -449,7 +453,7 @@
             "type": "view",
             "location": "sources-sidebar",
             "id": "sources.xhrBreakpoints",
-            "title": "XHR Breakpoints",
+            "title": "Custom Breakpoints",
             "order": 5,
             "hasToolbar": "true",
             "persistence": "permanent",
@@ -462,6 +466,7 @@
             "title": "DOM Breakpoints",
             "order": 7,
             "persistence": "permanent",
+            "condition": "false",
             "factoryName": "Components.DOMBreakpointsSidebarPane.Proxy"
         },
         {
@@ -472,6 +477,7 @@
             "order": 8,
             "hasToolbar": "true",
             "persistence": "permanent",
+            "condition": "false",
             "className": "Sources.ObjectEventListenersSidebarPane"
         },
         {
@@ -481,6 +487,7 @@
             "title": "Event Listener Breakpoints",
             "order": 9,
             "persistence": "permanent",
+            "condition": "false",
             "className": "Sources.EventListenerBreakpointsSidebarPane"
         },
         {
@@ -508,7 +515,7 @@
         {
             "type": "view",
             "id": "sources.jsBreakpoints",
-            "title": "Breakpoints",
+            "title": "Line Breakpoints",
             "persistence": "permanent",
             "className": "Sources.JavaScriptBreakpointsSidebarPane"
         },

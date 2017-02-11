@@ -128,7 +128,7 @@ Sources.NavigatorView = class extends UI.VBox {
     }
 
     var addFolderLabel = Common.UIString('Add folder to workspace');
-    contextMenu.appendItem(addFolderLabel, addFolder);
+    // contextMenu.appendItem(addFolderLabel, addFolder);
   }
 
   /**

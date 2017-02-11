@@ -59,7 +59,7 @@ Sources.XHRBreakpointsSidebarPane = class extends Components.BreakpointsSidebarP
     UI.viewManager.showView('sources.xhrBreakpoints');
 
     var inputElementContainer = createElementWithClass('p', 'breakpoint-condition');
-    inputElementContainer.textContent = Common.UIString('Break when URL contains:');
+    inputElementContainer.textContent = Common.UIString('Break when frame matches:');
 
     var inputElement = inputElementContainer.createChild('span', 'editing');
     inputElement.id = 'breakpoint-condition-input';
@@ -92,6 +92,9 @@ Sources.XHRBreakpointsSidebarPane = class extends Components.BreakpointsSidebarP
     if (enabled)
       this._updateBreakpointOnTarget(url, true, target);
 
+    if (!url)
+      return;
+
     if (this._breakpointElements.has(url)) {
       this._breakpointElements.get(url)._checkboxElement.checked = enabled;
       return;
@@ -101,7 +104,7 @@ Sources.XHRBreakpointsSidebarPane = class extends Components.BreakpointsSidebarP
     element._url = url;
     element.addEventListener('contextmenu', this._contextMenu.bind(this, url), true);
 
-    var title = url ? Common.UIString('URL contains "%s"', url) : Common.UIString('Any XHR');
+    var title = url ? Common.UIString('%s', url) : Common.UIString('Any XHR');
     var label = createCheckboxLabel(title, enabled);
     element.appendChild(label);
     label.checkboxElement.addEventListener('click', this._checkboxClicked.bind(this, url), false);

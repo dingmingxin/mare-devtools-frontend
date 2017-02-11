@@ -696,12 +696,14 @@ Sources.SourcesPanel = class extends UI.Panel {
 
     this._pauseOnExceptionButton = new UI.ToolbarToggle('', 'largeicon-pause-on-exceptions');
     this._pauseOnExceptionButton.addEventListener('click', this._togglePauseOnExceptions, this);
+    /*
     debugToolbar.appendToolbarItem(this._pauseOnExceptionButton);
 
     debugToolbar.appendSeparator();
     debugToolbar.appendToolbarItem(new UI.ToolbarCheckbox(
         Common.UIString('Async'), Common.UIString('Capture async stack traces'),
         Common.moduleSetting('enableAsyncStackTraces')));
+    */
 
     return debugToolbar;
   }
@@ -839,7 +841,7 @@ Sources.SourcesPanel = class extends UI.Panel {
       contextMenu.appendSeparator();
     }
     this._appendUISourceCodeMappingItems(contextMenu, uiSourceCode);
-    if (!uiSourceCode.project().canSetFileContent()) {
+    if (false && !uiSourceCode.project().canSetFileContent()) {
       contextMenu.appendItem(
           Common.UIString.capitalize('Local ^modifications\u2026'), this._showLocalHistory.bind(this, uiSourceCode));
     }
@@ -853,7 +855,7 @@ Sources.SourcesPanel = class extends UI.Panel {
   _appendUISourceCodeFrameItems(event, contextMenu, target) {
     if (!(target instanceof Sources.UISourceCodeFrame))
       return;
-    contextMenu.appendAction('debugger.evaluate-selection');
+    // contextMenu.appendAction('debugger.evaluate-selection');
   }
 
   /**
@@ -871,7 +873,7 @@ Sources.SourcesPanel = class extends UI.Panel {
     if (contentType.hasScripts()) {
       var target = UI.context.flavor(SDK.Target);
       var debuggerModel = SDK.DebuggerModel.fromTarget(target);
-      if (debuggerModel && debuggerModel.isPaused()) {
+      if (false && debuggerModel && debuggerModel.isPaused()) {
         contextMenu.appendItem(
             Common.UIString.capitalize('Continue to ^here'), this._continueToLocation.bind(this, uiLocation));
       }
@@ -895,9 +897,11 @@ Sources.SourcesPanel = class extends UI.Panel {
     if (!(target instanceof SDK.RemoteObject))
       return;
     var remoteObject = /** @type {!SDK.RemoteObject} */ (target);
+    /*
     contextMenu.appendItem(
         Common.UIString.capitalize('Store as ^global ^variable'), this._saveToTempVariable.bind(this, remoteObject));
-    if (remoteObject.type === 'function') {
+    */
+    if (false && remoteObject.type === 'function') {
       contextMenu.appendItem(
           Common.UIString.capitalize('Show ^function ^definition'),
           this._showFunctionDefinition.bind(this, remoteObject));

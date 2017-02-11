@@ -215,7 +215,7 @@ Sources.WatchExpressionsSidebarPane = class extends UI.ThrottledWidget {
    * @param {!Object} target
    */
   appendApplicableItems(event, contextMenu, target) {
-    contextMenu.appendAction('sources.add-to-watch');
+    // contextMenu.appendAction('sources.add-to-watch');
   }
 };
 

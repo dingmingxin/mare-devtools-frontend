@@ -99,9 +99,9 @@ Sources.ScopeChainSidebarPane = class extends UI.VBox {
         case Protocol.Debugger.ScopeType.Closure:
           var scopeName = scope.name();
           if (scopeName)
-            title = Common.UIString('Closure (%s)', UI.beautifyFunctionName(scopeName));
+            title = Common.UIString('Upvalue (%s)', UI.beautifyFunctionName(scopeName));
           else
-            title = Common.UIString('Closure');
+            title = Common.UIString('Upvalue');
           emptyPlaceholder = Common.UIString('No Variables');
           break;
         case Protocol.Debugger.ScopeType.Catch:

@@ -247,6 +247,8 @@ UI.ContextSubMenuItem = class extends UI.ContextMenuItem {
     var groups = new Map();
     var extensions = self.runtime.extensions('context-menu-item');
     for (var extension of extensions) {
+      if (extension.descriptor()['actionId'] === 'sources.search.toggle')
+        continue;
       var itemLocation = extension.descriptor()['location'] || '';
       if (!itemLocation.startsWith(location + '/'))
         continue;

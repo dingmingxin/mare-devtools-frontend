@@ -154,7 +154,15 @@ SDK.Script = class extends SDK.SDKObject {
    * @return {!Common.ResourceType}
    */
   contentType() {
-    return Common.resourceTypes.Script;
+    var ext = Common.ParsedURL.extractExtension(this.sourceURL).toLowerCase();
+    var type = Common.resourceTypes[ext];
+    if (!type) {
+      var mime = Common.ResourceType._mimeTypeByExtension.get(ext);
+      type = new Common.ResourceType('script', 'Script',
+        Common.resourceCategories.Script, true, mime);
+      Common.resourceTypes[ext] = type;
+    }
+    return type;
   }
 
   /**

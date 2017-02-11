@@ -331,6 +331,7 @@
             "title": "Rendering",
             "persistence": "closeable",
             "order": 50,
+            "condition": "false",
             "className": "Main.RenderingOptionsView"
         },
         {

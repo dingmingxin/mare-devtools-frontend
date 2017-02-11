@@ -68,6 +68,14 @@
             "settingName": "showMetricsRulers",
             "settingType": "boolean",
             "defaultValue": false
+        },
+        {
+            "type": "setting",
+            "category": "Profiler",
+            "title": "High resolution CPU profiling",
+            "settingName": "highResolutionCpuProfiling",
+            "settingType": "boolean",
+            "defaultValue": true
         }
     ],
     "scripts": [

@@ -23,7 +23,7 @@ Console.ConsolePrompt = class extends UI.Widget {
      */
     function gotFactory(factory) {
       this._editor =
-          factory.createEditor({lineNumbers: false, lineWrapping: true, mimeType: 'javascript', autoHeight: true});
+          factory.createEditor({lineNumbers: false, lineWrapping: true, mimeType: 'lua', autoHeight: true});
 
       this._editor.configureAutocomplete({
         substituteRangeCallback: this._substituteRange.bind(this),

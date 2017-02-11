@@ -74,7 +74,7 @@ Console.ConsoleView = class extends UI.VBox {
         /** @type {!UI.Action }*/ (UI.actionRegistry.action('console.clear'))));
     toolbar.appendToolbarItem(this._filterBar.filterButton());
     toolbar.appendToolbarItem(this._executionContextComboBox);
-    toolbar.appendToolbarItem(this._preserveLogCheckbox);
+    // toolbar.appendToolbarItem(this._preserveLogCheckbox);
     toolbar.appendToolbarItem(this._progressToolbarItem);
 
     this._filterBar.show(this._contentsElement);
@@ -580,9 +580,11 @@ Console.ConsoleView = class extends UI.VBox {
     function monitoringXHRItemAction() {
       Common.moduleSetting('monitoringXHREnabled').set(!Common.moduleSetting('monitoringXHREnabled').get());
     }
+    /*
     contextMenu.appendCheckboxItem(
         Common.UIString('Log XMLHttpRequests'), monitoringXHRItemAction,
         Common.moduleSetting('monitoringXHREnabled').get());
+    */
 
     var sourceElement = event.target.enclosingNodeOrSelfWithClass('console-message-wrapper');
     var consoleMessage = sourceElement ? sourceElement.message.consoleMessage() : null;
@@ -615,7 +617,7 @@ Console.ConsoleView = class extends UI.VBox {
     contextMenu.appendSeparator();
     contextMenu.appendAction('console.clear');
     contextMenu.appendAction('console.clear.history');
-    contextMenu.appendItem(Common.UIString('Save as...'), this._saveConsole.bind(this));
+    // contextMenu.appendItem(Common.UIString('Save as...'), this._saveConsole.bind(this));
 
     var request = consoleMessage ? consoleMessage.request : null;
     if (request && request.resourceType() === Common.resourceTypes.XHR) {
@@ -1065,8 +1067,8 @@ Console.ConsoleViewFilter = class extends Common.Object {
         '', Common.UIString('Hide violations'), false, Common.moduleSetting('hideViolationMessages'));
     Common.moduleSetting('hideNetworkMessages').addChangeListener(this._filterChanged, this);
     Common.moduleSetting('hideViolationMessages').addChangeListener(this._filterChanged, this);
-    filterBar.addFilter(this._hideNetworkMessagesCheckbox);
-    filterBar.addFilter(this._hideViolationMessagesCheckbox);
+    // filterBar.addFilter(this._hideNetworkMessagesCheckbox);
+    // filterBar.addFilter(this._hideViolationMessagesCheckbox);
 
     var levels = [
       {name: SDK.ConsoleMessage.MessageLevel.Error, label: Common.UIString('Errors')},

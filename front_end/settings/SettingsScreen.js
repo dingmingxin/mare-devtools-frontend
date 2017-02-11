@@ -210,7 +210,25 @@ Settings.GenericSettingsTab = class extends Settings.SettingsTab {
     var setting = Common.moduleSetting(settingName);
     var uiTitle = Common.UIString(extension.title());
 
+    var hiddenSettingNames = [
+        'cssSourceMapsEnabled',
+        'customFormatters',
+        'disableDataSaverInfobar',
+        'disablePausedStateOverlay',
+        'hideNetworkMessages',
+        'hideViolationMessages',
+        'inlineVariableValues',
+        'jsSourceMapsEnabled',
+        'monitoringXHREnabled',
+        'preserveConsoleLog',
+        'searchInContentScripts',
+    ];
+    if (hiddenSettingNames.includes(settingName))
+      return;
+
     var sectionElement = this._sectionElement(sectionName);
+    if (!sectionElement)
+       return;
     var settingControl;
 
     switch (descriptor['settingType']) {
@@ -252,7 +270,9 @@ Settings.GenericSettingsTab = class extends Settings.SettingsTab {
       var settingUI = /** @type {!UI.SettingUI} */ (object);
       var element = settingUI.settingElement();
       if (element)
-        this._sectionElement(sectionName).appendChild(element);
+        var sectionElement = this._sectionElement(sectionName);
+        if (sectionElement)
+          sectionElement.appendChild(element);
     }
   }
 
@@ -261,6 +281,9 @@ Settings.GenericSettingsTab = class extends Settings.SettingsTab {
    * @return {!Element}
    */
   _sectionElement(sectionName) {
+    var hiddenSectionNames = ['Elements', 'Network', 'Profiler', 'Extensions', 'DevTools', 'Debugger'];
+    if (hiddenSectionNames.includes(sectionName))
+        return;
     var sectionElement = this._nameToSection.get(sectionName);
     if (!sectionElement) {
       var uiSectionName = sectionName && Common.UIString(sectionName);

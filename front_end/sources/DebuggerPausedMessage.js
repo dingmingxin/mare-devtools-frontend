@@ -57,7 +57,8 @@ Sources.DebuggerPausedMessage = class {
           breakpointManager.findBreakpoint(uiLocation.uiSourceCode, uiLocation.lineNumber, uiLocation.columnNumber) :
           null;
       var defaultText = breakpoint ? Common.UIString('Paused on breakpoint') : Common.UIString('Debugger paused');
-      messageWrapper = buildWrapper(defaultText);
+      var step = details.auxData.step;
+      messageWrapper = buildWrapper(defaultText, `hook event: ${step.event}`);
     } else {
       console.warn(
           'ScriptsPanel paused, but callFrames.length is zero.');  // TODO remove this once we understand this case better

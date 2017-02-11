@@ -279,7 +279,7 @@ Sources.JavaScriptSourceFrame = class extends Sources.UISourceCodeFrame {
       if (this.uiSourceCode().project().type() === Workspace.projectTypes.Network &&
           Common.moduleSetting('jsSourceMapsEnabled').get() &&
           !Bindings.blackboxManager.isBlackboxedUISourceCode(this.uiSourceCode())) {
-        if (this._scriptFileForTarget.size) {
+        if (false && this._scriptFileForTarget.size) {
           var scriptFile = this._scriptFileForTarget.valuesArray()[0];
           var addSourceMapURLLabel = Common.UIString.capitalize('Add ^source ^map\u2026');
           contextMenu.appendItem(addSourceMapURLLabel, addSourceMapURL.bind(null, scriptFile));

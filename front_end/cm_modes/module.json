@@ -86,6 +86,14 @@
             "mimeTypes": [
                 "text/x-styl"
             ]
+        },
+        {
+            "type": "@TextEditor.CodeMirrorMimeMode",
+            "className": "CmModes.DefaultCodeMirrorMimeMode",
+            "fileName": "lua.js",
+            "mimeTypes": [
+                "text/x-lua"
+            ]
         }
     ],
     "dependencies": [
@@ -103,6 +111,7 @@
         "livescript.js",
         "clojure.js",
         "stylus.js",
+        "lua.js",
         "jsx.js"
     ]
 }

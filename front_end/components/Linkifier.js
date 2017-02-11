@@ -493,7 +493,7 @@ Components.Linkifier = class {
         handler: () => Common.Revealer.reveal(uiLocation)
       });
     }
-    if (resource) {
+    if (false && resource) {
       result.push({
         title: Common.UIString.capitalize('Open in Application ^panel'),
         handler: () => Common.Revealer.reveal(resource)
@@ -519,7 +519,7 @@ Components.Linkifier = class {
           result.push(action);
       }
     }
-    if (resource || info.url) {
+    if (false && (resource || info.url)) {
       result.push({title: UI.openLinkExternallyLabel(), handler: () => InspectorFrontendHost.openInNewTab(url)});
       result.push({title: UI.copyLinkAddressLabel(), handler: () => InspectorFrontendHost.copyText(url)});
     }
@@ -728,8 +728,10 @@ Components.Linkifier.ContentProviderContextMenuProvider = class {
     if (!contentProvider.contentURL())
       return;
 
+    /*
     contextMenu.appendItem(
         UI.openLinkExternallyLabel(), () => InspectorFrontendHost.openInNewTab(contentProvider.contentURL()));
+    */
     for (var title of Components.Linkifier._linkHandlers.keys()) {
       var handler = Components.Linkifier._linkHandlers.get(title);
       contextMenu.appendItem(
@@ -738,8 +740,10 @@ Components.Linkifier.ContentProviderContextMenuProvider = class {
     if (contentProvider instanceof SDK.NetworkRequest)
       return;
 
+    /*
     contextMenu.appendItem(
         UI.copyLinkAddressLabel(), () => InspectorFrontendHost.copyText(contentProvider.contentURL()));
+    */
     if (!contentProvider.contentType().isDocumentOrScriptOrStyleSheet())
       return;
 
@@ -769,11 +773,11 @@ Components.Linkifier.ContentProviderContextMenuProvider = class {
     }
 
     contextMenu.appendSeparator();
-    contextMenu.appendItem(Common.UIString('Save'), save.bind(null, false));
+    // contextMenu.appendItem(Common.UIString('Save'), save.bind(null, false));
 
     if (contentProvider instanceof Workspace.UISourceCode) {
       var uiSourceCode = /** @type {!Workspace.UISourceCode} */ (contentProvider);
-      if (!uiSourceCode.project().canSetFileContent())
+      if (false && !uiSourceCode.project().canSetFileContent())
         contextMenu.appendItem(Common.UIString.capitalize('Save ^as...'), save.bind(null, true));
     }
   }

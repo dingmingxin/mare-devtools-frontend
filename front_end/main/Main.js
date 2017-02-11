@@ -162,8 +162,8 @@ Main.Main = class {
 
     Components.shortcutsScreen = new Components.ShortcutsScreen();
     // set order of some sections explicitly
-    Components.shortcutsScreen.section(Common.UIString('Elements Panel'));
-    Components.shortcutsScreen.section(Common.UIString('Styles Pane'));
+    // Components.shortcutsScreen.section(Common.UIString('Elements Panel'));
+    // Components.shortcutsScreen.section(Common.UIString('Styles Pane'));
     Components.shortcutsScreen.section(Common.UIString('Debugger'));
     Components.shortcutsScreen.section(Common.UIString('Console'));
 
@@ -356,7 +356,7 @@ Main.Main = class {
         UI.KeyboardShortcut.Modifiers.Meta | UI.KeyboardShortcut.Modifiers.Alt :
         UI.KeyboardShortcut.Modifiers.Ctrl | UI.KeyboardShortcut.Modifiers.Shift;
     var advancedSearchShortcut = shortcut.makeDescriptor('f', advancedSearchShortcutModifier);
-    section.addKey(advancedSearchShortcut, Common.UIString('Search across all sources'));
+    // section.addKey(advancedSearchShortcut, Common.UIString('Search across all sources'));
 
     var inspectElementModeShortcuts =
         UI.shortcutRegistry.shortcutDescriptorsForAction('elements.toggle-element-search');

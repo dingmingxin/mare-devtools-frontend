@@ -169,6 +169,8 @@ UI.ShortcutRegistry = class {
      */
     function registerExtension(extension) {
       var descriptor = extension.descriptor();
+      if (descriptor['actionId'] === 'sources.search.toggle')
+        return;
       var bindings = descriptor['bindings'];
       for (var i = 0; bindings && i < bindings.length; ++i) {
         if (!platformMatches(bindings[i].platform))

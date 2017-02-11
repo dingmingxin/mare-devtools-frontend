@@ -44,6 +44,7 @@
             "title": "Throttling",
             "order": "35",
             "className": "Components.NetworkConditionsSettingsTab",
+            "condition": "false",
             "settings": [
                 "customNetworkConditions"
             ]

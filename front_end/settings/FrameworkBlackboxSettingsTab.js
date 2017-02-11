@@ -13,9 +13,11 @@ Settings.FrameworkBlackboxSettingsTab = class extends UI.VBox {
     this.registerRequiredCSS('settings/frameworkBlackboxSettingsTab.css');
 
     this.contentElement.createChild('div', 'header').textContent = Common.UIString('Framework Blackbox Patterns');
+    /*
     this.contentElement.createChild('div', 'blackbox-content-scripts')
         .appendChild(UI.SettingsUI.createSettingCheckbox(
             Common.UIString('Blackbox content scripts'), Common.moduleSetting('skipContentScripts'), true));
+    */
 
     this._blackboxLabel = Common.UIString('Blackbox');
     this._disabledLabel = Common.UIString('Disabled');

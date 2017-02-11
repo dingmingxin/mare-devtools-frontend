@@ -59,7 +59,7 @@ Components.ObjectPropertiesSection = class extends TreeOutlineInShadow {
 
       var note = this.expandedTitleElement.createChild('span', 'object-state-note');
       note.classList.add('info-note');
-      note.title = Common.UIString('Value below was evaluated just now.');
+      note.title = Common.UIString('Value below was evaluated as snapshot.');
     }
 
     this.element._section = this;
@@ -386,7 +386,7 @@ Components.ObjectPropertiesSection = class extends TreeOutlineInShadow {
 };
 
 /** @const */
-Components.ObjectPropertiesSection._arrayLoadThreshold = 100;
+Components.ObjectPropertiesSection._arrayLoadThreshold = 500000;
 
 
 /**
@@ -591,6 +591,7 @@ Components.ObjectPropertyTreeElement = class extends TreeElement {
           treeElement.setExpandable(true);
           treeElement.expand();
         }
+        treeElement.isInternalProperty = true;
         treeNode.appendChild(treeElement);
       }
     }
@@ -756,6 +757,10 @@ Components.ObjectPropertyTreeElement = class extends TreeElement {
       this.nameElement.classList.add('object-properties-section-dimmed');
     if (this.property.synthetic)
       this.nameElement.classList.add('synthetic-property');
+    if (this.property.symbol)
+      this.nameElement.classList.add('symbol-property');
+    if (this.isInternalProperty)
+      this.nameElement.classList.add('internal-property');
 
     this._updatePropertyPath();
     this.nameElement.addEventListener('contextmenu', this._contextMenuFired.bind(this, this.property), false);
@@ -812,7 +817,7 @@ Components.ObjectPropertyTreeElement = class extends TreeElement {
       contextMenu.appendApplicableItems(property.value);
     var copyPathHandler = InspectorFrontendHost.copyText.bind(InspectorFrontendHost, this.nameElement.title);
     contextMenu.beforeShow(() => {
-      contextMenu.appendItem(Common.UIString.capitalize('Copy ^property ^path'), copyPathHandler);
+      // contextMenu.appendItem(Common.UIString.capitalize('Copy ^property ^path'), copyPathHandler);
     });
     contextMenu.show();
   }
@@ -1249,7 +1254,7 @@ Components.ArrayGroupingTreeElement = class extends TreeElement {
   }
 };
 
-Components.ArrayGroupingTreeElement._bucketThreshold = 100;
+Components.ArrayGroupingTreeElement._bucketThreshold = 500000;
 Components.ArrayGroupingTreeElement._sparseIterationThreshold = 250000;
 Components.ArrayGroupingTreeElement._getOwnPropertyNamesThreshold = 500000;
 

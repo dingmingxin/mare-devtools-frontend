@@ -37,11 +37,12 @@ Common.ResourceType = class {
    * @param {!Common.ResourceCategory} category
    * @param {boolean} isTextType
    */
-  constructor(name, title, category, isTextType) {
+  constructor(name, title, category, isTextType, overrideMimeType) {
     this._name = name;
     this._title = title;
     this._category = category;
     this._isTextType = isTextType;
+    this._overrideMimeType = overrideMimeType;
   }
 
   /**
@@ -139,10 +140,12 @@ Common.ResourceType = class {
    * @return {string}
    */
   canonicalMimeType() {
+    if (this._overrideMimeType)
+      return this._overrideMimeType;
     if (this.isDocument())
       return 'text/html';
     if (this.isScript())
-      return 'text/javascript';
+      return 'text/x-lua';
     if (this.isStyleSheet())
       return 'text/css';
     return '';
