@@ -1,0 +1,21 @@
+{
+    "name": "mare-devtools-frontend",
+    "version": "0.1.0",
+    "description": "chrome devtools frontend fork for mare debugger",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/muzuiget/mare-devtools-frontend.git"
+    },
+    "keywords": [
+        "chrome-devtools",
+        "debugger",
+        "lua",
+        "mare"
+    ],
+    "author": "muzuiget",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/muzuiget/mare-devtools-frontend/issues"
+    },
+    "homepage": "https://github.com/muzuiget/mare-devtools-frontend#readme"
+}
