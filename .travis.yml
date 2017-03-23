@@ -1,0 +1,24 @@
+language: python
+
+notifications:
+    email: false
+
+matrix:
+    include:
+        - os: linux
+          dist: trusty
+          sudo: false
+          python: '2.7'
+
+script:
+    - ./build.sh
+
+deploy:
+    provider: releases
+    api_key:
+        secure: nhect32Zz7nuxw+t/wXV/ZmYACkfDOdtFB09DHGLKcyX2LUO1JSGpBX/qv797S+9Wx1dLlHdTE0CcLe4IcxyE9jeag3mRpJR+EoJhtikLPDFX77kOJHGAoam/kKX1UOSvAJtQY82YZ2AQ6k8aCEmzeESBlTFR1cQ+HHwljhU7Tz6hpmT9ZtPlwgQ3E2+DaOxRUdbbhGQeXTaByWB6CVFfDWiPfSZ2bTB5BoUKRNz5fDLJI0MvysO57+VLgBPyHGFdrYJcQ0SYyOvbR7M7rgqP0hFjci8v4rykgo2x5uKTtYY+x47kpqm8M/x3XrFouSDKeUzyWN9yCReD2fSPJy62pv6qdp+fnEOdfK/CVqOMNYJKSmEZY7ovlkQo6w3v6FKhZi9UsMnrSGqfrdcGTO98wtHdyKdRPY4a0fpneZdFuBQa/1bSXTmJLldFEUc1KQzzean8SGVJuav5FMRYVbTFQv5dXccU6lUnGiaU7ZjhD4Jkem31UcHHfA0B6cK0gvv0T3RnwJTryffsXT1B8QoZhJVymKNKSXkc48AYa+IOoPY7swbVyZKIc3j/1PnpuGMEN5RqV73dR5E1vWmRF5N+xTYbQmv844RZVoSUfQoK4tih21nxJU+jTR+Rl/BK5+BN4DmDdsvT9Xn005yBq0haoN3/eIr6PDoB8F3ce7Fd+g=
+    file: mare-devtools-frontend.zip
+    overwrite: true
+    skip_cleanup: true
+    on:
+        tags: true
