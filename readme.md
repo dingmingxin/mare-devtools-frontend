@@ -41,7 +41,7 @@ Feature
 Download
 --------
 
-Checkout [Github Release](https://github.com/ChromeDevTools/devtools-frontend/releases) page.
+Checkout [Github Release](https://github.com/muzuiget/mare-devtools-frontend/releases) page.
 
 You can use bower to install the zip file.
 
