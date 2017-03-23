@@ -1,6 +1,8 @@
 Mare DevTools Frontend
 ======================
 
+[![Build Status](https://travis-ci.org/muzuiget/mare-devtools-frontend.svg?branch=master)](https://travis-ci.org/muzuiget/mare-devtools-frontend)
+
 This project is a fork of [Chrome DevTools Frontend][cdf], hack it for [Mare][mare].
 
 [cdf]: https://github.com/ChromeDevTools/devtools-frontend
