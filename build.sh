@@ -38,11 +38,12 @@ cp front_end/Images/chromeSelect.png dist/front_end/Images
 cp front_end/Images/deleteIcon.png dist/front_end/Images
 cp front_end/Images/smallIcons.png dist/front_end/Images
 cp front_end/Images/toolbarButtonGlyphs.png dist/front_end/Images
-cp package.json dist
+
+# create package.json
+sed 's/"name": "mare-devtools-frontend/\0-dist/' package.json > dist/package.json
 
 # make archive
 cd dist
-mv front_end devtools
 zip -qr ../mare-devtools-frontend.zip ./*
 
 echo 'Done.'

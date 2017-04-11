@@ -41,15 +41,25 @@ Feature
 Download
 --------
 
-Checkout [Github Release](https://github.com/muzuiget/mare-devtools-frontend/releases) page.
+Use `npm` to download.
 
-You can use bower to install the zip file.
+download the source code for development
+
+```
+npm install --save-dev mare-devtools-frontend
+```
+
+or download the distribution code for production
+
+```
+npm install --save mare-devtools-frontend-dist
+```
 
 Development
 -----------
 
 Use any HTTP server to host `front_end` directory directly.
 
-To bundle the source in `front_end`, make it load faster, run `./build.sh`, then host the `dist/devtools` directory.
+To bundle the source in `front_end`, make it load faster, run `./build.sh`, then host the `dist/front_end` directory.
 
 After `./build.sh`, a mare-devtools-frontend.zip file will be created as well, ready to distribute.
