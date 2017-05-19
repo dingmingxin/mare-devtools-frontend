@@ -1,6 +1,6 @@
 {
     "name": "mare-devtools-frontend",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "chrome devtools frontend fork for mare debugger",
     "repository": {
         "type": "git",
