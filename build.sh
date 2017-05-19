@@ -36,6 +36,8 @@ cp front_end/Images/breakpointConditional.png dist/front_end/Images
 cp front_end/Images/breakpoint.png dist/front_end/Images
 cp front_end/Images/chromeSelect.png dist/front_end/Images
 cp front_end/Images/deleteIcon.png dist/front_end/Images
+cp front_end/Images/searchNext.png dist/front_end/Images
+cp front_end/Images/searchPrev.png dist/front_end/Images
 cp front_end/Images/smallIcons.png dist/front_end/Images
 cp front_end/Images/toolbarButtonGlyphs.png dist/front_end/Images
 
